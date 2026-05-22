@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Blooming Patch | U-Pick Flowers & Local Market</title>
+    <style>
+        /* --- Color Palette & Variables --- */
+        :root {
+            --bg-cream: #FFFDF9;
+            --petal-pink: #FF8E9E;
+            --marigold: #FFB830;
+            --leaf-green: #4E9F3D;
+            --sky-blue: #7FB5FF;
+            --berry-purple: #845EC2;
+            --text-dark: #2C3E50;
+        }
+
+        /* --- Global Styles --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--berry-purple);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--petal-pink);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, rgba(255,142,158,0.2) 0%, rgba(127,181,255,0.2) 100%), url('https://images.unsplash.com/photo-1508784411316-02b8cd4d3a3a?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 8px dashed var(--marigold);
+        }
+
+        .hero-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            display: inline-block;
+            max-width: 700px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--berry-purple);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .promo-badge {
+            background-color: var(--petal-pink);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            font-size: 1.1rem;
+            transform: rotate(-2deg);
+            animation: pulse 2s infinite;
+        }
+
+        /* --- Info Section (Cards) --- */
+        .info-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--text-dark);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card.flowers { border-top-color: var(--petal-pink); }
+        .card.market { border-top-color: var(--leaf-green); }
+        .card.hours { border-top-color: var(--marigold); }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* --- Banner Stripe --- */
+        .stripe {
+            background-color: var(--sky-blue);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        /* --- Animations & Responsive --- */
+        @keyframes pulse {
+            0% { transform: scale(1) rotate(-2deg); }
+            50% { transform: scale(1.05) rotate(-2deg); }
+            100% { transform: scale(1) rotate(-2deg); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-container { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">🌸 The Blooming Patch</a>
+            <nav>
+                <a href="#about">Our Story</a>
+                <a href="#features">What We Offer</a>
+                <a href="#hours">Hours & Location</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Grand Opening: June 1st!</h1>
+            <p>Welcome to your new favorite weekend escape. Wander through vibrant rows of fresh blooms and hand-pick your perfect bouquet right from the farm.</p>
+            <div class="promo-badge">🎉 Opening Day Special: First Flower Free!</div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section id="features" class="info-section">
+        <!-- Card 1: Flowers -->
+        <div class="card flowers">
+            <div class="card-icon">💐</div>
+            <h3>U-Pick Flower Patch</h3>
+            <p>Grab some shears and a bucket! From cheerful sunflowers to delicate wildflowers, design a custom bouquet that is completely your own unique creation.</p>
+        </div>
+
+        <!-- Card 2: Market -->
+        <div class="card market">
+            <div class="card-icon">🧺</div>
+            <h3>Local Produce Market</h3>
+            <p>Freshness you can taste. Stock up your kitchen with locally grown, seasonal fruits and vegetables harvested at peak ripeness right here in the community.</p>
+        </div>
+
+        <!-- Card 3: Hours & Info -->
+        <div class="card hours" id="hours">
+            <div class="card-icon">⏰</div>
+            <h3>Plan Your Visit</h3>
+            <p><strong>Grand Opening:</strong> June 1st<br>
+            <strong>Hours:</strong> 9:00 AM – 6:00 PM Daily<br>
+            <strong>Location:</strong> 123 Sunflower Lane, Your Town</p>
+        </div>
+    </section>
+
+    <!-- Colorful Banner Stripe -->
+    <div class="stripe">
+        🌻 Fresh Air, Vibrant Blooms, and Local Flavors Await You! 🌻
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 The Blooming Patch. Follow us on social media for daily field updates!</p>
+    </footer>
+
+</body>
+</html>
